@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Max Common Divisor";
+}
+
+
+
+
+<div class="container">
+    <h1>Υπολογισμός ΜΚΔ</h1>
+    <form asp-controller="Home" asp-action="Calculate" method="post">
+        <div class="form-group">
+            <label for="num1">Αριθμός 1:</label>
+            <input type="number" class="form-control" name="num1" required>
+        </div>
+        <div class="form-group">
+            <label for="num2">Αριθμός 2:</label>
+            <input type="number" class="form-control" name="num2" required>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Υπολογισμός ΜΚΔ</button>
+    </form>
+    @if (ViewBag.MCD != null)
+    {
+        <br />
+        <hr />
+        <h2>Ο ΜΚΔ των αριθμών @ViewBag.num1 και @ViewBag.num2 είναι: @ViewBag.MCD</h2>
+    }
+</div>
+
+
